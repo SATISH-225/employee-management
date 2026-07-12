@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1><i class="fa-solid fa-users"></i> Employee Management System</h1>
+
+        <p>Manage Employee Records Efficiently</p>
+
+    </header>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2 id="totalEmployees">0</h2>
+            <p>Total Employees</p>
+        </div>
+
+        <div class="card">
+            <h2>Node.js</h2>
+            <p>Backend</p>
+        </div>
+
+        <div class="card">
+            <h2>MongoDB</h2>
+            <p>Database</p>
+        </div>
+
+    </div>
+
+    <div class="form-container">
+
+        <form id="employeeForm">
+
+            <div class="input-group">
+                <input type="text" id="employeeId" placeholder="Employee ID" required>
+                <input type="text" id="name" placeholder="Employee Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="department" placeholder="Department" required>
+                <input type="text" id="designation" placeholder="Designation" required>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="salary" placeholder="Salary" required>
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
+
+            <button type="submit" class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Employee
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="search"
+        placeholder="Search Employee...">
+
+    </div>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Action</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="employeeTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
