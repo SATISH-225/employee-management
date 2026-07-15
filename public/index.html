@@ -18,11 +18,8 @@
 <div class="container">
 
     <header>
-
         <h1><i class="fa-solid fa-users"></i> Employee Management System</h1>
-
         <p>Manage Employee Records Efficiently</p>
-
     </header>
 
     <div class="dashboard">
@@ -54,8 +51,25 @@
             </div>
 
             <div class="input-group">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="phone" placeholder="Phone Number" required>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Enter a valid email address (e.g., employee@gmail.com)"
+                    required>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    pattern="[6-9][0-9]{9}"
+                    maxlength="10"
+                    minlength="10"
+                    title="Enter a valid 10-digit phone number"
+                    required>
+
             </div>
 
             <div class="input-group">
@@ -78,27 +92,23 @@
     </div>
 
     <div class="search-box">
-
         <input
-        type="text"
-        id="search"
-        placeholder="Search Employee...">
-
+            type="text"
+            id="search"
+            placeholder="Search Employee...">
     </div>
 
     <table>
 
         <thead>
 
-        <tr>
-
-            <th>Name</th>
-            <th>Email</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>Action</th>
-
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
 
         </thead>
 

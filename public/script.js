@@ -55,17 +55,42 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
+    const employeeId = document.getElementById("employeeId").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const department = document.getElementById("department").value.trim();
+    const designation = document.getElementById("designation").value.trim();
+    const salary = document.getElementById("salary").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    // Email Validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    // Phone Validation
+    const phonePattern = /^[6-9]\d{9}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        document.getElementById("email").focus();
+        return;
+    }
+
+    if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        document.getElementById("phone").focus();
+        return;
+    }
+
     const employee = {
-
-        employeeId: document.getElementById("employeeId").value,
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        department: document.getElementById("department").value,
-        designation: document.getElementById("designation").value,
-        salary: document.getElementById("salary").value,
-        address: document.getElementById("address").value
-
+        employeeId,
+        name,
+        email,
+        phone,
+        department,
+        designation,
+        salary,
+        address
     };
 
     try {
@@ -81,6 +106,8 @@ form.addEventListener("submit", async (e) => {
             body: JSON.stringify(employee)
 
         });
+
+        alert("Employee added successfully!");
 
         form.reset();
 
